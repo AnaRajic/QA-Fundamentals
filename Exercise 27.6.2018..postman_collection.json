@@ -1,0 +1,234 @@
+{
+	"info": {
+		"_postman_id": "bfb9e527-0e7d-4e67-b90a-1ec42311b8a9",
+		"name": "Exercise 27.6.2018.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "POST Board \"My Board Exercise\"",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://api.trello.com/1/boards?key={{key}}&token={{token}}&name=My Board Exercise&desc=Board for exercising to post, put, get, delete and creating variables",
+					"protocol": "https",
+					"host": [
+						"api",
+						"trello",
+						"com"
+					],
+					"path": [
+						"1",
+						"boards"
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "{{key}}"
+						},
+						{
+							"key": "token",
+							"value": "{{token}}"
+						},
+						{
+							"key": "name",
+							"value": "My Board Exercise"
+						},
+						{
+							"key": "desc",
+							"value": "Board for exercising to post, put, get, delete and creating variables"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST List \"To DO\"",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://api.trello.com/1/lists?key={{key}}&token={{token}}&name=To Do&idBoard=5d1526cb71b3175a6752fdf5",
+					"protocol": "https",
+					"host": [
+						"api",
+						"trello",
+						"com"
+					],
+					"path": [
+						"1",
+						"lists"
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "{{key}}"
+						},
+						{
+							"key": "token",
+							"value": "{{token}}"
+						},
+						{
+							"key": "name",
+							"value": "To Do"
+						},
+						{
+							"key": "idBoard",
+							"value": "5d1526cb71b3175a6752fdf5"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST List \"In Progress\"",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://api.trello.com/1/lists?key={{key}}&token={{token}}&idBoard=5d1526cb71b3175a6752fdf5&name=In Progress",
+					"protocol": "https",
+					"host": [
+						"api",
+						"trello",
+						"com"
+					],
+					"path": [
+						"1",
+						"lists"
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "{{key}}"
+						},
+						{
+							"key": "token",
+							"value": "{{token}}"
+						},
+						{
+							"key": "idBoard",
+							"value": "5d1526cb71b3175a6752fdf5"
+						},
+						{
+							"key": "name",
+							"value": "In Progress"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST List \"Done\"",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://api.trello.com/1/lists/?key={{key}}&token={{token}}&idBoard=5d1526cb71b3175a6752fdf5&name=Done",
+					"protocol": "https",
+					"host": [
+						"api",
+						"trello",
+						"com"
+					],
+					"path": [
+						"1",
+						"lists",
+						""
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "{{key}}"
+						},
+						{
+							"key": "token",
+							"value": "{{token}}"
+						},
+						{
+							"key": "idBoard",
+							"value": "5d1526cb71b3175a6752fdf5"
+						},
+						{
+							"key": "name",
+							"value": "Done"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET List \"In Progress\"",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.trello.com/1/lists/5d1527a6395f535f08b9a662?key={{key}}&token={{token}}",
+					"protocol": "https",
+					"host": [
+						"api",
+						"trello",
+						"com"
+					],
+					"path": [
+						"1",
+						"lists",
+						"5d1527a6395f535f08b9a662"
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "{{key}}"
+						},
+						{
+							"key": "token",
+							"value": "{{token}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT List \"Plans\" ",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "https://api.trello.com/1/lists/5d1526ee48764774199092df?key={{key}}&token={{token}}&name=Plans",
+					"protocol": "https",
+					"host": [
+						"api",
+						"trello",
+						"com"
+					],
+					"path": [
+						"1",
+						"lists",
+						"5d1526ee48764774199092df"
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "{{key}}"
+						},
+						{
+							"key": "token",
+							"value": "{{token}}"
+						},
+						{
+							"key": "name",
+							"value": "Plans"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
