@@ -1,0 +1,1297 @@
+{
+	"info": {
+		"_postman_id": "042a0305-bc12-48ba-ac7c-900757db0b10",
+		"name": "QA POSTMAN ",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Trello",
+			"item": [
+				{
+					"name": "POST Board",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "85ef183f-9e19-4f6b-a5f9-c27f9fd1ca5c",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"Response time is less than 300ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(300);",
+									"});",
+									"",
+									"pm.test(\"Successful POST request\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([200,202]);",
+									"});",
+									"",
+									"pm.test(\"Validate board name\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    console.log(jsonData.name);",
+									"    pm.expect(jsonData.name).to.eql(\"Postman Board\");",
+									"});",
+									"",
+									"pm.test(\"Validate board name\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    console.log(jsonData.desc);",
+									"    pm.expect(jsonData.desc).to.eql(\"\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "https://api.trello.com/1/boards?name=Board list&key=3edacd524132b6635d4dc993645cc4e8&token=898f3421740450838f0a30801c57166e59e7842287f5a5ae90f5869e062418e5",
+							"protocol": "https",
+							"host": [
+								"api",
+								"trello",
+								"com"
+							],
+							"path": [
+								"1",
+								"boards"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Board list"
+								},
+								{
+									"key": "key",
+									"value": "3edacd524132b6635d4dc993645cc4e8"
+								},
+								{
+									"key": "token",
+									"value": "898f3421740450838f0a30801c57166e59e7842287f5a5ae90f5869e062418e5"
+								}
+							]
+						},
+						"description": "Kreiranje borda"
+					},
+					"response": []
+				},
+				{
+					"name": "PUT",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "https://api.trello.com/1/boards/5d148713ab7f7e0d61f82cac?name=Novi board&desc=Ovo je moj description&key=3edacd524132b6635d4dc993645cc4e8&token=898f3421740450838f0a30801c57166e59e7842287f5a5ae90f5869e062418e5",
+							"protocol": "https",
+							"host": [
+								"api",
+								"trello",
+								"com"
+							],
+							"path": [
+								"1",
+								"boards",
+								"5d148713ab7f7e0d61f82cac"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Novi board"
+								},
+								{
+									"key": "desc",
+									"value": "Ovo je moj description"
+								},
+								{
+									"key": "key",
+									"value": "3edacd524132b6635d4dc993645cc4e8"
+								},
+								{
+									"key": "token",
+									"value": "898f3421740450838f0a30801c57166e59e7842287f5a5ae90f5869e062418e5"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST Board 2",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "85ef183f-9e19-4f6b-a5f9-c27f9fd1ca5c",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"Response time is less than 300ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(300);",
+									"});",
+									"",
+									"pm.test(\"Successful POST request\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([200,202]);",
+									"});",
+									"",
+									"pm.test(\"Validate board name\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    console.log(jsonData.name);",
+									"    pm.expect(jsonData.name).to.eql(\"Postman Board\");",
+									"});",
+									"",
+									"pm.test(\"Validate board name\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    console.log(jsonData.desc);",
+									"    pm.expect(jsonData.desc).to.eql(\"\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "https://api.trello.com/1/boards?name=Novi Test Board&key=3edacd524132b6635d4dc993645cc4e8&token=898f3421740450838f0a30801c57166e59e7842287f5a5ae90f5869e062418e5",
+							"protocol": "https",
+							"host": [
+								"api",
+								"trello",
+								"com"
+							],
+							"path": [
+								"1",
+								"boards"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Novi Test Board"
+								},
+								{
+									"key": "key",
+									"value": "3edacd524132b6635d4dc993645cc4e8"
+								},
+								{
+									"key": "token",
+									"value": "898f3421740450838f0a30801c57166e59e7842287f5a5ae90f5869e062418e5"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST Board 3",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "85ef183f-9e19-4f6b-a5f9-c27f9fd1ca5c",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"Response time is less than 300ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(300);",
+									"});",
+									"",
+									"pm.test(\"Successful POST request\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([200,202]);",
+									"});",
+									"",
+									"pm.test(\"Validate board name\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    console.log(jsonData.name);",
+									"    pm.expect(jsonData.name).to.eql(\"Postman Board\");",
+									"});",
+									"",
+									"pm.test(\"Validate board name\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    console.log(jsonData.desc);",
+									"    pm.expect(jsonData.desc).to.eql(\"\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "https://api.trello.com/1/boards?name=Board za GET&key=3edacd524132b6635d4dc993645cc4e8&token=898f3421740450838f0a30801c57166e59e7842287f5a5ae90f5869e062418e5",
+							"protocol": "https",
+							"host": [
+								"api",
+								"trello",
+								"com"
+							],
+							"path": [
+								"1",
+								"boards"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Board za GET"
+								},
+								{
+									"key": "key",
+									"value": "3edacd524132b6635d4dc993645cc4e8"
+								},
+								{
+									"key": "token",
+									"value": "898f3421740450838f0a30801c57166e59e7842287f5a5ae90f5869e062418e5"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://api.trello.com/1/boards/5d148713ab7f7e0d61f82cac?key=3edacd524132b6635d4dc993645cc4e8&token=898f3421740450838f0a30801c57166e59e7842287f5a5ae90f5869e062418e5",
+							"protocol": "https",
+							"host": [
+								"api",
+								"trello",
+								"com"
+							],
+							"path": [
+								"1",
+								"boards",
+								"5d148713ab7f7e0d61f82cac"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "3edacd524132b6635d4dc993645cc4e8"
+								},
+								{
+									"key": "token",
+									"value": "898f3421740450838f0a30801c57166e59e7842287f5a5ae90f5869e062418e5"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST Globalna varijabla",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "85ef183f-9e19-4f6b-a5f9-c27f9fd1ca5c",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"Response time is less than 300ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(300);",
+									"});",
+									"",
+									"pm.test(\"Successful POST request\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([200,202]);",
+									"});",
+									"",
+									"pm.test(\"Validate board name\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    console.log(jsonData.name);",
+									"    pm.expect(jsonData.name).to.eql(\"Postman Board\");",
+									"});",
+									"",
+									"pm.test(\"Validate board name\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    console.log(jsonData.desc);",
+									"    pm.expect(jsonData.desc).to.eql(\"\");",
+									"});",
+									"",
+									"var jsonData = pm.response.json();",
+									"var id = jsonData.id;",
+									"",
+									"pm.globals.set(\"boardId\", id);",
+									"",
+									"pm.environment.set(\"envBoardId\", id);",
+									"",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "https://api.trello.com/1/boards?name=Board za GET&key={{key}}&token={{token}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"trello",
+								"com"
+							],
+							"path": [
+								"1",
+								"boards"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Board za GET"
+								},
+								{
+									"key": "key",
+									"value": "{{key}}"
+								},
+								{
+									"key": "token",
+									"value": "{{token}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET 3",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.trello.com/1/boards/{{boardId}}?key={{key}}&token={{token}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"trello",
+								"com"
+							],
+							"path": [
+								"1",
+								"boards",
+								"{{boardId}}"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{key}}"
+								},
+								{
+									"key": "token",
+									"value": "{{token}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT 2",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "https://api.trello.com/1/boards/{{boardId}}?name=Update Novi test board &desc=Ovo je moj description&key={{key}}&token={{token}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"trello",
+								"com"
+							],
+							"path": [
+								"1",
+								"boards",
+								"{{boardId}}"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Update Novi test board "
+								},
+								{
+									"key": "desc",
+									"value": "Ovo je moj description"
+								},
+								{
+									"key": "key",
+									"value": "{{key}}"
+								},
+								{
+									"key": "token",
+									"value": "{{token}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete 2",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://api.trello.com/1/boards/{{boardId}}?key={{key}}&token={{token}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"trello",
+								"com"
+							],
+							"path": [
+								"1",
+								"boards",
+								"{{boardId}}"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{key}}"
+								},
+								{
+									"key": "token",
+									"value": "{{token}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST To Do List",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "https://api.trello.com/1/lists?name=To Do&idBoard=5d14d1a36605cf6300f53fe6&key={{key}}&token={{token}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"trello",
+								"com"
+							],
+							"path": [
+								"1",
+								"lists"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "To Do"
+								},
+								{
+									"key": "idBoard",
+									"value": "5d14d1a36605cf6300f53fe6"
+								},
+								{
+									"key": "key",
+									"value": "{{key}}"
+								},
+								{
+									"key": "token",
+									"value": "{{token}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT New To DO List",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "https://api.trello.com/1/lists/5d14d1df12d6c053e2592342?name=New To Do List&key={{key}}&token={{token}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"trello",
+								"com"
+							],
+							"path": [
+								"1",
+								"lists",
+								"5d14d1df12d6c053e2592342"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "New To Do List"
+								},
+								{
+									"key": "key",
+									"value": "{{key}}"
+								},
+								{
+									"key": "token",
+									"value": "{{token}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET To Do List",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.trello.com/1/lists/5d14d1df12d6c053e2592342?key={{key}}&token={{token}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"trello",
+								"com"
+							],
+							"path": [
+								"1",
+								"lists",
+								"5d14d1df12d6c053e2592342"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{key}}"
+								},
+								{
+									"key": "token",
+									"value": "{{token}}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "GET html page 0",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "ecd0acd6-146e-4724-851d-341ca45f74b9",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://www.google.com/",
+					"protocol": "https",
+					"host": [
+						"www",
+						"google",
+						"com"
+					],
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET html page",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "c0b62a3f-cb49-452e-8803-6a08467336ce",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Response time is less than 200ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);",
+							"",
+							"});",
+							"",
+							"pm.test(\"Content-Type is present\", function () {",
+							"    pm.response.to.have.header(\"Content-Type\");",
+							"});",
+							"",
+							"pm.test(\"Expires is present\", function () {",
+							"    pm.response.to.have.header(\"Expires\");",
+							"});",
+							"",
+							"pm.test(\"Vary\", function () {",
+							"    pm.response.to.have.header(\"Vary\");",
+							"});",
+							"",
+							"pm.test(\"Check value of heade X-Frame-Options\", function () {",
+							"   pm.response.to.have.header(\"X-Frame-Options\");",
+							"   pm.response.to.be.header(\"X-Frame-Options\", \"DENY\");",
+							"});",
+							"",
+							"pm.test(\"Body matches string\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"facebook\");",
+							"});",
+							"",
+							"pm.test(\"Body matches string\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"datum\");",
+							"});",
+							"",
+							"pm.test(\"Body matches string\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"pol\");",
+							"});",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "www.facebook.com",
+					"host": [
+						"www",
+						"facebook",
+						"com"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET png",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "b19150a0-6b1f-4249-b178-796ff0d1a2e3",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Status code is 500\", function () {",
+							"    pm.response.to.have.status(500);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://interactive-examples.mdn.mozilla.net/media/examples/grapefruit-slice-332-332.jpg",
+					"protocol": "https",
+					"host": [
+						"interactive-examples",
+						"mdn",
+						"mozilla",
+						"net"
+					],
+					"path": [
+						"media",
+						"examples",
+						"grapefruit-slice-332-332.jpg"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Test for and if",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "d7a2abde-08ff-4ae6-bc67-11f7c736b08e",
+						"exec": [
+							"pm.test(\"Validat array of objects \", function () {\r",
+							"   // UZELI SMO RESPONSE = ARRAY\r",
+							"   var jsonData = pm.response.json();\r",
+							"   // IZDVOJILI JEDAN OBJEKAT ID = 3 (TO JE 4 OBJEKAT JER KRECMEO OD 0)\r",
+							"   var jedanObjekat = jsonData[3];\r",
+							"   //VALIDIRALI DA LI JE TITLE 3 OBJEKTA TACAN\r",
+							"   pm.expect(jedanObjekat.title).to.eql(\"et porro tempora\");\r",
+							"   //FOR LOOP ZA PROLAZAK KROS SVE OBJEKTE IZ RESPONSA I ISPIS TITLE\r",
+							"   for (var i = 0; i < jsonData.length; i++) {\r",
+							"       var userTitle = jsonData[i].title;\r",
+							"       //console.log(user);\r",
+							"       if (userTitle ==\"et porro tempora\") {\r",
+							"           console.log(jsonData[i]);\r",
+							"           console.log(\"Nasli smo usera\");\r",
+							"       }\r",
+							"   }\r",
+							"});\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://jsonplaceholder.typicode.com/todos",
+					"protocol": "https",
+					"host": [
+						"jsonplaceholder",
+						"typicode",
+						"com"
+					],
+					"path": [
+						"todos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://jsonplaceholder.typicode.com/todos",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "d7a2abde-08ff-4ae6-bc67-11f7c736b08e",
+						"exec": [
+							"pm.test(\"Validate array of objects\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    var jedanObjekat = jsonData[3];",
+							"    console.log(jsonData[3]);",
+							"    pm.expect(jedanObjekat.title).to.eql(\"et porro tempora\");",
+							"});",
+							"",
+							"pm.test(\"Validate array of objects\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    var jedanObjekat = jsonData[3];",
+							"    console.log(jsonData[3]);",
+							"    pm.expect(jedanObjekat.id).to.eql(4);",
+							"});",
+							"",
+							"for (var i = 0; i < 5; i++) { ",
+							"    var jsonData = pm.response.json();",
+							"    var user = jsonData[i];",
+							"  console.log(user);",
+							"}",
+							"",
+							"for (var i = 0; i < 5; i++) { ",
+							"    var jsonData = pm.response.json();",
+							"    var user = jsonData[i].title;",
+							"  console.log(user);",
+							"}",
+							"",
+							"for (var i = 0; i < jsonData.length; i++) { ",
+							"    var jsonData = pm.response.json();",
+							"    var userTitle = jsonData[i].title;",
+							"",
+							"   if (userTitle ==\"et porro tempora\") {",
+							"           console.log(jsonData[i]);",
+							"           console.log(\"Nasli smo usera\");",
+							"  ",
+							"}}",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://jsonplaceholder.typicode.com/todos",
+					"protocol": "https",
+					"host": [
+						"jsonplaceholder",
+						"typicode",
+						"com"
+					],
+					"path": [
+						"todos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET xml",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "2a389dea-d3e9-482a-984c-7e3da11313f0",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://www.klix.ba/rss/vijesti/svijet",
+					"protocol": "https",
+					"host": [
+						"www",
+						"klix",
+						"ba"
+					],
+					"path": [
+						"rss",
+						"vijesti",
+						"svijet"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET JSON",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "d7c8d47d-7369-4967-a5a7-666dba2fc1b0",
+						"exec": [
+							"pm.test(\"Status code is 500\", function () {",
+							"    pm.response.to.have.status(500);",
+							"});",
+							"",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Status code is 300\", function () {",
+							"    pm.response.to.have.status(300);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://jsonplaceholder.typicode.com/todos",
+					"protocol": "https",
+					"host": [
+						"jsonplaceholder",
+						"typicode",
+						"com"
+					],
+					"path": [
+						"todos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET HTML with params",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "f68e50e7-ca69-41b5-9472-0a38367ccb63",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://www.google.com/search?q=Sanela&value=1000&value=22",
+					"protocol": "https",
+					"host": [
+						"www",
+						"google",
+						"com"
+					],
+					"path": [
+						"search"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "Sanela",
+							"description": "This is for search"
+						},
+						{
+							"key": "value",
+							"value": "1000"
+						},
+						{
+							"key": "value",
+							"value": "22"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET HTML with params 2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "345f0fc1-cbef-47c7-b9dd-86c73952931f",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Status code is 500\", function () {",
+							"    pm.response.to.have.status(500);",
+							"});",
+							"",
+							"pm.test(\"Status code is 100\", function () {",
+							"    pm.response.to.have.status(100);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://www.youtube.com/watch?v=7YcW25PHnAA",
+					"protocol": "https",
+					"host": [
+						"www",
+						"youtube",
+						"com"
+					],
+					"path": [
+						"watch"
+					],
+					"query": [
+						{
+							"key": "v",
+							"value": "7YcW25PHnAA"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET JSON test",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "b90e2f03-d1c0-451f-96e1-e6fa93781506",
+						"exec": [
+							"pm.test(\"json\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    console.log(jsonData.headers.Accept);",
+							"    var accept = jsonData.headers.Accept;",
+							"    pm.expect(accept).to.eql(\"*/*\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://httpbin.org/get",
+					"protocol": "http",
+					"host": [
+						"httpbin",
+						"org"
+					],
+					"path": [
+						"get"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Success GET JSON test",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://httpbin.org/get",
+							"protocol": "http",
+							"host": [
+								"httpbin",
+								"org"
+							],
+							"path": [
+								"get"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 26 Jun 2019 10:11:26 GMT"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "no-referrer-when-downgrade"
+						},
+						{
+							"key": "Server",
+							"value": "nginx"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Content-Length",
+							"value": "239"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"args\": {},\n    \"headers\": {\n        \"Accept\": \"*/*\",\n        \"Accept-Encoding\": \"gzip, deflate\",\n        \"Cache-Control\": \"no-cache\",\n        \"Host\": \"httpbin.org\",\n        \"Postman-Token\": \"f44aa922-5829-4dc9-91e5-f04a97640de9\",\n        \"User-Agent\": \"PostmanRuntime/7.15.0\"\n    },\n    \"origin\": \"77.77.213.14, 77.77.213.14\",\n    \"url\": \"https://httpbin.org/get\"\n}"
+				}
+			]
+		},
+		{
+			"name": "GET Vjezba",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "a36b7e7b-d0e5-4265-9251-9e580f5c584f",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Response time is less than 100ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(100);",
+							"});",
+							"",
+							"pm.test(\"Connection is present\", function () {              //da li postoji header Connection",
+							"    pm.response.to.have.header(\"Connection\");",
+							"});",
+							"",
+							"pm.test(\"Check value of header Connection\", function () {   //da li u headeru ima value keep-alive",
+							"   pm.response.to.be.header(\"Connection\", \"keep-alive\");",
+							"});",
+							"",
+							"pm.test(\"Connection\", function () {",
+							"    var mojResponse = pm.response.json();",
+							"    console.log(mojResponse);",
+							"    pm.expect(mojResponse.icon_url).to.eql(\"https://assets.chucknorris.host/img/avatar/chuck-norris.png\");",
+							"",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.chucknorris.io/jokes/random",
+					"protocol": "https",
+					"host": [
+						"api",
+						"chucknorris",
+						"io"
+					],
+					"path": [
+						"jokes",
+						"random"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET JSON weather",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "api.openweathermap.org/data/2.5/weather?q=London,uk&appid=019e3f4301bface9f04f09992755a996",
+					"host": [
+						"api",
+						"openweathermap",
+						"org"
+					],
+					"path": [
+						"data",
+						"2.5",
+						"weather"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "London,uk"
+						},
+						{
+							"key": "appid",
+							"value": "019e3f4301bface9f04f09992755a996"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Mail Auth",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "ar",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "b8d96a0c290c7151978e8ae7319d9e2a-us3",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://us3.api.mailchimp.com/3.0/",
+					"protocol": "https",
+					"host": [
+						"us3",
+						"api",
+						"mailchimp",
+						"com"
+					],
+					"path": [
+						"3.0",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST Kreiranje member-a",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "ar",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "b8d96a0c290c7151978e8ae7319d9e2a-us3",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"status\": \"subscribed\",\n\"email_address\":\"world41@gmail.com\"\n}"
+				},
+				"url": {
+					"raw": "https://us3.api.mailchimp.com/3.0/lists/097e2a5e81/members",
+					"protocol": "https",
+					"host": [
+						"us3",
+						"api",
+						"mailchimp",
+						"com"
+					],
+					"path": [
+						"3.0",
+						"lists",
+						"097e2a5e81",
+						"members"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
